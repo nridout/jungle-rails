@@ -1,0 +1,12 @@
+Thank you for your order, <%= @order.email %>
+==============================================
+
+Here are the details of your order:
+
+<% @line_items.each do |line_item| %>
+Qty: <%= line_item.quantity %> | Product: <%= line_item.product.name %>	| Price: $<%= line_item.product.price * line_item.quantity %>
+<% end %>
+
+TOTAL:	$<%= @order.total_cents / 100.0 %>
+
+Have a great day!
