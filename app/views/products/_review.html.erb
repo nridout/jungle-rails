@@ -2,7 +2,8 @@
 
 <hr>
 <div>
-  <p>Rating: <%= review.rating %></p>
+  <p><%= review.user.first_name %></p>
+  <p><%= render_stars(review.rating) %></p>
   <p><%= review.description %></p>
 </div>
 
