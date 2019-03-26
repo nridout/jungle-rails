@@ -33,7 +33,7 @@ RSpec.describe Product, type: :model do
       subject.category = Category.new
       expect(subject).to_not be_valid
       expect(subject.errors.messages).to include(:price => ["is not a number", "can't be blank"])
-            expect(subject.errors.messages).to include(:price_cents => ["is not a number"])
+      expect(subject.errors.messages).to include(:price_cents => ["is not a number"])
     end
 
     it "is not valid without a quantity" do
