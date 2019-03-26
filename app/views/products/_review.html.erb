@@ -5,7 +5,7 @@
   </p>
   <p><%= render_stars(review.rating) %></p>
   <p><%= review.description %></p>
-  <% if review.user_id == current_user.id %>
+  <% if current_user && review.user_id == current_user.id %>
     <%= button_to "Delete", product_review_path(@product, review), :method => :delete, class: "btn btn-danger" %>
   <% end %>
   <hr>
