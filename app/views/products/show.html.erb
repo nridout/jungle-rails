@@ -25,24 +25,30 @@
         </dl>
       </div>
     </div>
-    <div class="row reviews">
-      <div>
-        <h4>Add a Customer Review</h4>
-      </div>
-      <div class="row">
-        <div class="col-md-6 col-md-offset-3">
-
-        <%= render 'form' %>
-
+    <% if logged_in? %>
+      <div class="row reviews">
+        <div>
+          <h4>Add a Customer Review</h4>
+          <hr>
         </div>
-      </div>
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3">
 
+          <%= render 'form' %>
+
+          </div>
+      </div>
+      <% end %>
+      <br>
       <div>
         <h4>Customer Reviews</h4>
+        <hr>
       </div>
-
+      <% if @product.reviews.count == 0 %>
+      <p>No reviews yet, be the first to leave a review</p>
+      <% else %>
       <%= render 'review' %>
-
+      <% end %>
     </div>
 
   </article>
