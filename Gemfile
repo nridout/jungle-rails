@@ -59,3 +59,10 @@ group :production do
   gem 'newrelic_rpm'
   gem 'rails_12factor'
 end
+
+group :test do
+  gem 'factory_bot_rails'
+  gem 'shoulda-matchers'
+  gem 'database_cleaner'
+  gem 'faker'
+end
